@@ -1,0 +1,282 @@
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+.app {
+	font-size: 1rem;
+  height: 100vh;
+  display: grid;
+  grid-template-areas:
+    "header"
+    "content"
+    "footer";
+  grid-template-rows: minmax(190px, 290px) 1fr 50px;
+  grid-template-columns: 1fr;
+}
+
+.app > header {
+  display: block;
+  background: #113365;
+  grid-area: header;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app > header img {
+  margin-top: 25px;
+}
+
+.app > header .main {
+  width: 50px;
+  height: 50px;
+}
+
+.app > header .detail {
+  width: 180px;
+  height: 180px;
+}
+
+.title {
+  font-size: 3.5rem;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.title > img {
+  margin-right: 10px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: bold;
+  line-height: 60px;
+}
+
+.app > content .main-gallery {
+  height: 100%;
+  color: white;
+  background: #ffffff;
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 110px max-content 110px;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.main-gallery .btn-arrow {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #00000080;
+  cursor: pointer;
+}
+
+.app > footer {
+  background: #161616;
+  grid-area: footer;
+  color: #ffffff;
+  font-size: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.app > footer .ccyear {
+  left: 20%;
+  position: absolute;
+}
+ 
+.gallery .images {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gallery .image {
+  background: #cccccc;
+  height: 310px;
+  width: 310px;
+  position: relative;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.gallery .image:nth-child(2) {
+  margin-right: 50px;
+  margin-left:  50px;
+}
+
+.gallery img {
+  max-height: 270px;
+  max-width: 270px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  margin: auto;
+
+}
+
+.gallery .team-name {
+  position: absolute;
+  text-align: center;
+  bottom: 18px;
+  right: 0px;
+  left: 0;
+}
+
+.btn-carousel {
+  display: contents;
+}
+
+button img {
+  height: 110px;
+  width: 100px;
+  cursor: pointer;
+}
+
+.details {
+  display: grid;
+  grid-template-rows: 40px minmax(200px, 261px) 80px minmax(60px, 240px);
+  max-width: 610px;
+  margin: auto;
+  height: 65vh;
+  color: #000000;
+}
+
+.details .btn-carousel {
+  background: transparent;
+  cursor: pointer;
+}
+
+.details .mainDash {
+  border-radius: 10px;
+  background: #cccccc50;
+  position: relative;
+}
+
+.details .mainDash img {
+  width: 400px;
+  position: absolute;
+  top: 0px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+.details .content {
+  border-radius: 10px;
+  background: #cccccc30;
+  overflow-y: scroll;
+}
+
+.stadium {
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  line-height: 30px;
+}
+
+.column:first-child {
+  padding: 15px 40px;
+}
+
+.column:nth-child(2) {
+  padding: 15px 0px;
+}
+
+.column span {
+  color: #00000070;
+}
+
+.subDash ul {
+  padding: 0px; 
+  margin: 0px;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.subDash li {
+  align-items: flex-start; 
+  display: flex;
+  cursor: pointer;
+}
+
+.subDash a {
+  color: rgb(0, 51, 102); 
+  text-decoration: none; 
+  font-size: 14px; 
+  font-weight: bold; 
+  line-height: 21px;
+}
+
+.subDash span {
+  float: left; 
+  height: 70px; 
+  width: 90px; 
+  overflow: hidden; 
+  margin-right: 5px;
+}
+
+.subDash span img {
+  display: flex; 
+  border-width: 1px; 
+  border-color: rgb(238, 238, 238); 
+  height: 95px; 
+  padding: 10px;
+}
+
+.subDash li p {
+  display: flex;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+@media (max-width: 1257px) {
+  .app {
+    grid-template-rows: minmax(155px, 290px) 1fr 50px;
+  }
+  .app > header .detail {
+    height: 60%;
+    width: 60%;
+  }
+  .app > header .subtitle {
+    line-height: 20px;
+  }
+  .gallery .image {
+    max-width: 21%;
+    width: 270px;
+    height: 30vh;
+  }
+  .gallery .image img {
+    max-width: 80%;
+  }
+  .details .mainDash img {
+    width: 60%;
+  }
+  content > .details {
+    grid-template-rows: 30px 170px 80px minmax(60px, 240px);
+  }
+  .app > content .main-gallery {
+    grid-template-columns: 50px minmax(300px, 938px) 50px;
+    padding: 20px 0px 20px 0px
+  }
+}
