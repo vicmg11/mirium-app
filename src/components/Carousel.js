@@ -2,7 +2,7 @@ import React from 'react';
 import Details from '../components/Details';
 
 class Carousel extends React.Component {
-	//DisplayLogos will held 3 logos at the time.
+	//Display Logos will held 3 logos at the time.
 	state = {
 		logosArr: [],
 		displayLogos: [],

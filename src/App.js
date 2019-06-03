@@ -1,8 +1,7 @@
 /*
 * Created by: Victor Marmolejo
 * Date: 5/31/2019
-* Carousel Exercise
-* to run this app type on the console yarn start
+* Carousel Assignment
 */
 import React from 'react';
 import Carousel from './components/Carousel';
@@ -22,10 +21,10 @@ const Header = ({ logo, title, subtitle }) => (
 	</header>
 );
 
-const Content = ({ nflTeams, handleTitles }) => (
-	<content>
+const Article = ({ nflTeams, handleTitles }) => (
+	<article>
 		<Carousel nflTeams={nflTeams} handleTitles={handleTitles} />
-	</content>
+	</article>
 );
 
 const Footer = () => (
@@ -87,7 +86,8 @@ class MainApp extends React.Component {
 	};
 
 	render() {
-		const { logo, title, subtitle, isLoaded, nflTeams, error } = this.state;
+    const { logo, title, subtitle, isLoaded, nflTeams, error } = this.state;
+    //in case the api is not available display a message
 		if (error) {
 			return <div>Error: {error.message}</div>;
 		} else if (!isLoaded) {
@@ -96,7 +96,7 @@ class MainApp extends React.Component {
 			return (
 				<div className="app">
 					<Header logo={logo} title={title} subtitle={subtitle} />
-					<Content nflTeams={nflTeams} handleTitles={this.setTitles} />
+					<Article nflTeams={nflTeams} handleTitles={this.setTitles} />
 					<Footer />
 				</div>
 			);

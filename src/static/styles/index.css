@@ -57,7 +57,7 @@
   line-height: 60px;
 }
 
-.app > content .main-gallery {
+.app > article .main-gallery {
   height: 100%;
   color: white;
   background: #ffffff;
@@ -143,7 +143,7 @@ button img {
 
 .details {
   display: grid;
-  grid-template-rows: 40px minmax(200px, 261px) 80px minmax(60px, 240px);
+  grid-template-rows: 40px minmax(200px, 261px) 80px minmax(60px, 340px);
   max-width: 610px;
   margin: auto;
   height: 65vh;
@@ -265,6 +265,7 @@ button img {
     max-width: 21%;
     width: 270px;
     height: 30vh;
+    min-height: 120px;
   }
   .gallery .image img {
     max-width: 80%;
@@ -272,11 +273,20 @@ button img {
   .details .mainDash img {
     width: 60%;
   }
-  content > .details {
+  article > .details {
     grid-template-rows: 30px 170px 80px minmax(60px, 240px);
   }
-  .app > content .main-gallery {
+  .app > article .main-gallery {
     grid-template-columns: 50px minmax(300px, 938px) 50px;
     padding: 20px 0px 20px 0px
+  }
+}
+
+@media (max-width: 650px) {
+  .gallery img {
+    bottom: 50px;
+  }
+  .galler .image img {
+    max-width: 50%;
   }
 }
